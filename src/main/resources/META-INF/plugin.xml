@@ -1,0 +1,35 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin require-restart="false">
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.saragarcia6123.mini_commit</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>MiniCommit</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="saragarcia6123@gmail.com" url="https://github.com/saragarcia6123">Sara García</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>Track and document brief, insightful code changes with ease, combining user input and auto-generated logs.</description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="MiniCommit"  icon="AllIcons.Actions.Edit" anchor="right" factoryClass="com.saragarcia6123.mini_commit.MiniCommitToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <action id="OpenMiniCommitToolWindowAction" class="com.saragarcia6123.mini_commit.OpenMiniCommitToolWindowAction" text="MiniCommit"
+                description="Opens the custom tool window">
+            <add-to-group group-id="MainToolbarRight" anchor="last"/>
+        </action>
+    </actions>
+
+</idea-plugin>
